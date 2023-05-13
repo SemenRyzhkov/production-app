@@ -1,33 +1,21 @@
+import webpuck from 'webpack';
 import path from 'path';
-import webpuck from 'webpack'
-import HTMLWebpuckPlugin from 'html-webpack-plugin'
+import { buildWebpuckConfig } from './congig/build/buildWebpuckConfig';
+import { BuildPaths } from './congig/build/types/config';
 
-const config: webpuck.Configuration = {
-  mode: 'development',
+const paths: BuildPaths ={
   entry: path.resolve(__dirname, 'src', 'index.ts'),
-  output: {
-    filename: '[name].[contenthash].js',
-    path: path.resolve(__dirname, 'build'),
-    clean: true,
-  },
-  plugins: [
-    new HTMLWebpuckPlugin({
-      template: path.resolve(__dirname, 'public', 'index.html'),
-    }),
-    new webpuck.ProgressPlugin(),
-  ],
-  module: {
-    rules: [
-      {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
-      },
-    ],
-  },
-  resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
-  },
-};
+  build: path.resolve(__dirname, 'build'),
+  html: path.resolve(__dirname, 'public', 'index.html'),
+}
+
+const mode = 'development';
+const isDev = mode === 'development';
+
+const config: webpuck.Configuration = buildWebpuckConfig({
+  mode: 'development',
+  paths,
+  isDev,
+});
 
 export default config;
