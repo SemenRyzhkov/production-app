@@ -13,14 +13,12 @@ export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className={classNames(CssClasses.AppLink, {}, [className])}>
-      <Button
-        theme={ThemeButton.CLEAR}
-        className={classNames(CssClasses.ThemeSwitcher, {}, [className])}
-        onClick={toggleTheme}
-      >
-        {theme === Theme.DARK ? <DarkIcon /> : <LightIcon />}
-      </Button>
-    </div>
+    <Button
+      theme={ThemeButton.CLEAR}
+      className={classNames(CssClasses.ThemeSwitcher, {}, [className])}
+      onClick={toggleTheme}
+    >
+      {theme === Theme.DARK ? <DarkIcon /> : <LightIcon />}
+    </Button>
   );
 };
