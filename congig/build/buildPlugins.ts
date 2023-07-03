@@ -23,6 +23,6 @@ export function buildPlugins({
       __IS_DEV__: JSON.stringify(isDev),
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new ReactRefreshPlugin(),
+    // new ReactRefreshPlugin(),
   ];
 }
