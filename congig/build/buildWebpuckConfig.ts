@@ -8,7 +8,7 @@ import { buildResolvers } from './buildResolvers';
 import { buildDevServer } from './buildDevServer';
 
 export function buildWebpuckConfig(
-  options: BuildOptions
+  options: BuildOptions,
 ): webpack.Configuration {
   const { paths, mode, isDev } = options;
 

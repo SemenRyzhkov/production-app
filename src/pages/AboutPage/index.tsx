@@ -1,4 +1,3 @@
-import  {AboutPageSync} from './ui/AboutPage.async';
+import { AboutPageSync } from './ui/AboutPage.async';
 
-
-export { AboutPageSync as AboutPage};
+export { AboutPageSync as AboutPage };
