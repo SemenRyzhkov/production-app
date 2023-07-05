@@ -1,7 +1,7 @@
 import webpuck from 'webpack';
 import path from 'path';
-import { buildWebpuckConfig } from './congig/build/buildWebpuckConfig';
-import { BuildPaths, BuildEnv } from './congig/build/types/config';
+import { buildWebpuckConfig } from './config/build/buildWebpuckConfig';
+import { BuildPaths, BuildEnv } from './config/build/types/config';
 
 export default (env: BuildEnv) => {
   const paths: BuildPaths = {
