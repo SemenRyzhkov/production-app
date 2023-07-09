@@ -22,6 +22,7 @@ export function buildPlugins({
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
     }),
+    // new ReactRefreshPlugin({ overlay: false }),
     new webpack.HotModuleReplacementPlugin(),
     // new ReactRefreshPlugin(),
   ];
