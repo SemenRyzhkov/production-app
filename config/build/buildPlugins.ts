@@ -1,9 +1,8 @@
-import path from 'path';
 import webpack from 'webpack';
 
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import HTMLWebpuckPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { ReactRefreshPlugin } from '@pmmmwh/react-refresh-webpack-plugin';
 import { BuildOptions } from './types/config';
 
 export function buildPlugins({
@@ -22,8 +21,9 @@ export function buildPlugins({
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
     }),
-    // new ReactRefreshPlugin({ overlay: false }),
     new webpack.HotModuleReplacementPlugin(),
-    // new ReactRefreshPlugin(),
+    new BundleAnalyzerPlugin({
+      openAnalyzer: false,
+    }),
   ];
 }
