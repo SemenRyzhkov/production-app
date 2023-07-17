@@ -20,5 +20,5 @@
       "module": "CommonJS"
     }
   },
-  "include": ["./config/jest/setup.Tests.ts"]
+  "include": ["./config/jest/setup.Tests.ts", "./src/**/*.ts", "./src/**/*.tsx"]
 }
