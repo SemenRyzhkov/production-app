@@ -5,7 +5,6 @@ import { buildCssLoaders } from './loaders/buildCssLoaders';
 export function buildLoaders({ isDev }: BuildOptions): webpuck.RuleSetRule[] {
   const svgLoader = {
     test: /\.svg$/i,
-    issuer: /\.[jt]sx?$/,
     use: ['@svgr/webpack'],
   };
 
