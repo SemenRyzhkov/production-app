@@ -46,7 +46,7 @@ export const PrimaryDark: Story = {
 };
 
 export const SecondaryDark: Story = {
-  decorators: [ThemeDecorator(Theme.DARK)], 
+  decorators: [ThemeDecorator(Theme.DARK)],
   args: {
     children: 'Text',
     theme: AppLinkTheme.SECONDARY,
