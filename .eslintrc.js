@@ -20,6 +20,9 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint', 'i18next'],
   rules: {
+    'object-curly-newline': 'off',
+    'arrow-body-style': 'off',
+    'comma-dangle': 'off',
     'react/jsx-indent': [2, 2],
     'react/jsx-indent-props': [2, 2],
     indent: [2, 2],
@@ -59,6 +62,7 @@ module.exports = {
     ],
     'jsx-a11y/no-static-element-interactions': 'off',
     'jsx-a11y/click-events-have-key-events': 'off',
+    'no-trailing-spaces': 'off',
   },
   globals: {
     __IS_DEV__: true,
