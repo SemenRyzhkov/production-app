@@ -2,6 +2,7 @@ import { render } from 'react-dom';
 import { ErrorBoundary } from 'app/providers/ErrorBoundary';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'app/providers/ThemeProvider';
+import 'app/styles/index.scss';
 import App from './app/App';
 import 'shared/config/i18nConfig/i18n';
 
@@ -14,5 +15,5 @@ render(
     </ErrorBoundary>
   </BrowserRouter>,
 
-  document.getElementById('root'),
+  document.getElementById('root')
 );

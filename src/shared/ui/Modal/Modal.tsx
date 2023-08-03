@@ -6,6 +6,9 @@ import React, {
   useCallback,
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { Portal } from 'shared/ui/Portal/Portal';
+import { useTheme } from 'app/providers/ThemeProvider';
+
 import CssClasses from './Modal.module.scss';
 
 interface ModalProps {
@@ -20,15 +23,16 @@ const ANIMATION_DELAY = 300;
 export const Modal = (props: ModalProps) => {
   const { className, children, isOpen, onClose } = props;
   const [isClosing, setIsClosing] = useState(false);
+  const timerRef = useRef<ReturnType<typeof setTimeout>>();
+  const { theme } = useTheme();
 
   const mods: Record<string, boolean> = {
     [CssClasses.opened]: isOpen,
     [CssClasses.isClosing]: isClosing,
+    [CssClasses[theme]]: true,
   };
 
-  const timerRef = useRef<ReturnType<typeof setTimeout>>();
-
-  const closeHandler = () => {
+  const closeHandler = useCallback(() => {
     if (onClose) {
       setIsClosing(true);
       timerRef.current = setTimeout(() => {
@@ -36,7 +40,7 @@ export const Modal = (props: ModalProps) => {
         setIsClosing(false);
       }, ANIMATION_DELAY);
     }
-  };
+  }, [onClose]);
 
   // на каждый перерендер компонента эта функция создается заново - без useCallback
   // она запоминает, мемоизирует и возвращает ссылку на одну и ту же функцию
@@ -65,12 +69,14 @@ export const Modal = (props: ModalProps) => {
   };
 
   return (
-    <div className={classNames(CssClasses.Modal, mods, [className])}>
-      <div className={CssClasses.overlay} onClick={closeHandler}>
-        <div className={CssClasses.content} onClick={onContentclick}>
-          {children}
+    <Portal>
+      <div className={classNames(CssClasses.Modal, mods, [className])}>
+        <div className={CssClasses.overlay} onClick={closeHandler}>
+          <div className={CssClasses.content} onClick={onContentclick}>
+            {children}
+          </div>
         </div>
       </div>
-    </div>
+    </Portal>
   );
 };
