@@ -65,15 +65,17 @@ module.exports = {
     'no-trailing-spaces': 'off',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',
+    'implicit-arrow-linebreak': 'off',
   },
   globals: {
     __IS_DEV__: true,
   },
   overrides: [
     {
-      files: ['**/src/**/*.test.{ts,tsx}'],
+      files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
       rules: {
         'i18next/no-literal-string': 'off',
+        'max-len': 'off',
       },
     },
   ],

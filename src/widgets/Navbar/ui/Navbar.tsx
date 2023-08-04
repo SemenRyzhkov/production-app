@@ -24,15 +24,17 @@ export const Navbar = (props: NavbarProps) => {
     <div className={classNames(CssClasses.Navbar, {}, [className])}>
       <Button
         onClick={() => setIsAuthModal(true)}
-        theme={ButtonTheme.OUTLINE}
+        theme={ButtonTheme.CLEAR_INVERTED}
         className={CssClasses.links}
       >
         {t('Войти')}
       </Button>
       <Modal isOpen={isAuthModal} onClose={onToggleModal}>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab maiores
-        ullam et earum iste, hic non reiciendis distinctio possimus ipsam? Eum
-        deserunt distinctio dolorum a!
+        {t(
+          'Lorem ipsum dolor sit, amet consectetur adipisicing elit.'
+            + 'Ab maiores ullam et earum iste, hic non reiciendis distinctio possimus ipsam? Eum deserunt'
+            + 'distinctio dolorum a!'
+        )}
       </Modal>
     </div>
   );
