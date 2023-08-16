@@ -29,7 +29,6 @@ export const Modal = (props: ModalProps) => {
   const mods: Record<string, boolean> = {
     [CssClasses.opened]: isOpen,
     [CssClasses.isClosing]: isClosing,
-    [CssClasses[theme]]: true,
   };
 
   const closeHandler = useCallback(() => {
