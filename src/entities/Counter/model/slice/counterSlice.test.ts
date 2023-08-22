@@ -4,25 +4,22 @@ import { CounterSchema } from '../types/counterSchema';
 describe('counterSlice.test', () => {
   test('decrement', () => {
     const state: CounterSchema = { value: 10 };
+
     expect(
-      counterReducer(state as CounterSchema, counterActions.decrement())
+      counterReducer(state, counterActions.decrement()),
     ).toEqual({ value: 9 });
   });
-});
-
-describe('counterSlice.test', () => {
   test('increment', () => {
     const state: CounterSchema = { value: 10 };
+
     expect(
-      counterReducer(state as CounterSchema, counterActions.increment())
+      counterReducer(state, counterActions.increment()),
     ).toEqual({ value: 11 });
   });
-});
 
-describe('counterSlice.test', () => {
-  test('empty state', () => {
-    expect(counterReducer(undefined, counterActions.increment())).toEqual({
-      value: 1,
-    });
+  test('should work with empty state', () => {
+    expect(
+      counterReducer(undefined, counterActions.increment()),
+    ).toEqual({ value: 1 });
   });
 });

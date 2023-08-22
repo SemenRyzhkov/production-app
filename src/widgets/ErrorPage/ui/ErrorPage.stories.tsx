@@ -1,17 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { PageError } from './PageError';
+import { ErrorPage } from './ErrorPage';
 
-const meta: Meta<typeof PageError> = {
-  title: 'widgets/PageError',
-  component: PageError,
+const meta: Meta<typeof ErrorPage> = {
+  title: 'widgets/ErrorPage',
+  component: ErrorPage,
   tags: ['autodocs'],
   argTypes: {},
 };
 
 export default meta;
-type Story = StoryObj<typeof PageError>;
+type Story = StoryObj<typeof ErrorPage>;
 
 export const Light: Story = {
   args: {},

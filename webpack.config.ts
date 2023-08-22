@@ -1,7 +1,7 @@
-import webpuck from 'webpack';
+import webpack from 'webpack';
 import path from 'path';
-import { buildWebpuckConfig } from './config/build/buildWebpuckConfig';
-import { BuildPaths, BuildEnv } from './config/build/types/config';
+import { buildWebpackConfig } from './config/build/buildWebpackConfig';
+import { BuildEnv, BuildPaths } from './config/build/types/config';
 
 export default (env: BuildEnv) => {
   const paths: BuildPaths = {
@@ -16,7 +16,7 @@ export default (env: BuildEnv) => {
 
   const isDev = mode === 'development';
 
-  const config: webpuck.Configuration = buildWebpuckConfig({
+  const config: webpack.Configuration = buildWebpackConfig({
     mode,
     paths,
     isDev,

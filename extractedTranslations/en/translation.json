@@ -1,25 +1,20 @@
 {
-  "": "",
-  "D": "D",
-  "Lorem ipsum dolor sit, amet consectetur adipisicing elit": {
-    " Ab maiores ullam et earum iste, hic non reiciendis distinctio possimus ipsam? Eum deserunt distinctio dolorum a!": "",
-    " Ab maiores ullam et earum iste, hic non reiciendis distinctio possimus ipsam? Eumdeserunt distinctio dolorum a!": "",
-    "Ab maiores ullam et earum iste, hic non reiciendis distinctio possimus ipsam? Eum deserunt distinctio dolorum a!": "",
-    "Ab maiores ullam et earum iste, hic non reiciendis distinctio possimus ipsam? Eum deseruntNaN": "",
-    "Ab maiores ullam et earum iste, hic non reiciendis distinctio possimus ipsam? Eum deseruntdistinctio dolorum a!": ""
+  "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
+    " Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam": {
+      "": ""
+    }
   },
   "decrement": "decrement",
   "increment": "increment",
-  "Во": "Во",
+  "throw error": "throw error",
   "Войти": "Войти",
-  "Выбросить ошибку": "Выбросить ошибку",
   "Главная": "Главная",
   "Главная страница": "Главная страница",
-  "Непредвиденная ошибка": "Непредвиденная ошибка",
   "О сайте": "О сайте",
-  "О сайте1234": "О сайте1234",
-  "Перезагрузить": "Перезагрузить",
+  "О сайте123123": "О сайте123123",
+  "Обновить страницу": "Обновить страницу",
+  "Переключить": "Переключить",
+  "Произошла непредвиденная ошибка": "Произошла непредвиденная ошибка",
   "Страница не найдена": "Страница не найдена",
-  "Язык": "Язык",
-  "открыть/закрыть": "открыть/закрыть"
+  "Язык": "Язык"
 }
