@@ -5,7 +5,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { Input } from './Input';
 
 const meta: Meta<typeof Input> = {
-  title: 'shared/Button',
+  title: 'shared/Input',
   component: Input,
   tags: ['autodocs'],
   argTypes: {},
