@@ -1,4 +1,7 @@
 {
+  "": "",
+  " ": " ",
+  "D": "D",
   "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
     " Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam": {
       "": ""
@@ -7,6 +10,20 @@
   "decrement": "decrement",
   "increment": "increment",
   "throw error": "throw error",
+  "В": "В",
+  "Вв": "Вв",
+  "Введи": "Введи",
+  "Введите ": "Введите ",
+  "Введите bvz": "Введите bvz",
+  "Введите kj": "Введите kj",
+  "Введите kjuby": "Введите kjuby",
+  "Введите user": "Введите user",
+  "Введите userName": "Введите userName",
+  "Введите имя": "Введите имя",
+  "Введите логин": "Введите логин",
+  "Введите па": "Введите па",
+  "Введите паро": "Введите паро",
+  "Введите пароль": "Введите пароль",
   "Войти": "Войти",
   "Главная": "Главная",
   "Главная страница": "Главная страница",
