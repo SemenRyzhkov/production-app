@@ -67,6 +67,7 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'error',
     'implicit-arrow-linebreak': 'off',
     'no-params-reassign': 'off',
+    'operator-linebreak': 'off',
   },
   globals: {
     __IS_DEV__: true,
