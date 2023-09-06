@@ -20,3 +20,21 @@ export const Primary: Story = {
   ],
   args: {},
 };
+
+export const Error: Story = {
+  decorators: [
+    StoreDecorator({
+      loginForm: { username: 'admin', password: '123', error: 'ERROR' },
+    }),
+  ],
+  args: {},
+};
+
+export const Loading: Story = {
+  decorators: [
+    StoreDecorator({
+      loginForm: { isLoading: true },
+    }),
+  ],
+  args: {},
+};

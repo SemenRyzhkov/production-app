@@ -26,6 +26,6 @@ export const loginByUsername = createAsyncThunk<
     return response.data;
   } catch (error) {
     console.log(error);
-    return thunkAPI.rejectWithValue('Вы ввели неправильный логин или пароль');
+    return thunkAPI.rejectWithValue('error');
   }
 });
