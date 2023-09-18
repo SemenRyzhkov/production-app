@@ -12,11 +12,11 @@ import cls from './LoginForm.module.scss';
 import { getLoginState } from '../../model/selectors/getLoginState';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 
-interface LoginFormProps {
+export interface LoginFormProps {
   className?: string;
 }
 
-export const LoginForm = memo(({ className }: LoginFormProps) => {
+const LoginForm = memo(({ className }: LoginFormProps) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const { username, password, isLoading, error } = useSelector(getLoginState);
@@ -41,7 +41,12 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
   return (
     <div className={classNames(cls.LoginForm, {}, [className])}>
       <Text title={t('Форма авторизации')} />
-      {error && <Text text={t('Вы ввели неправильный логин или парроль')} theme={TextTheme.ERROR} />}
+      {error && (
+        <Text
+          text={t('Вы ввели неправильный логин или парроль')}
+          theme={TextTheme.ERROR}
+        />
+      )}
       <Input
         autoFocus
         placeholder={t('Введите логин')}
@@ -68,3 +73,5 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
     </div>
   );
 });
+
+export default LoginForm;
