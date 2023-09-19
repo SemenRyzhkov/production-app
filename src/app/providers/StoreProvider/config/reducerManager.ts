@@ -4,11 +4,11 @@ import {
   ReducersMapObject,
   combineReducers,
 } from '@reduxjs/toolkit';
-import { StateSchema, StateSchemaKey } from './StateSchema';
+import { StateSchema, StateSchemaKey, ReducerManager } from './StateSchema';
 
 export function createReducerManager(
   initialReducers: ReducersMapObject<StateSchema>
-) {
+): ReducerManager {
   const reducers = { ...initialReducers };
 
   let combinedReducer = combineReducers(reducers);
@@ -53,15 +53,10 @@ export function createReducerManager(
   };
 }
 
-const staticReducers = {
-  users: usersReducer,
-  posts: postsReducer,
-};
+// export function configureStore(initialState) {
+//   const reducerManager = createReducerManager(staticReducers);
 
-export function configureStore(initialState) {
-  const reducerManager = createReducerManager(staticReducers);
+//   const store = createStore(reducerManager.reduce, initialState);
 
-  const store = createStore(reducerManager.reduce, initialState);
-
-  store.reducerManager = reducerManager;
-}
+//   store.reducerManager = reducerManager;
+// }
