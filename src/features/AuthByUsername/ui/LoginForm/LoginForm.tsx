@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Input } from 'shared/ui/Input/Input';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 
+import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useDispatch, useSelector, useStore } from 'react-redux';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { ReduxStoreWithManager } from 'app/providers/StoreProvider';
@@ -29,15 +30,6 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
 
   const store = useStore() as ReduxStoreWithManager;
 
-  useEffect(() => {
-    store.reducerManager.add('loginForm', loginReducer);
-
-    return () => {
-      store.reducerManager.remove('loginForm');
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   const onChangeUsername = useCallback(
     (value: string) => {
       dispatch(loginActions.setUsername(value));
@@ -57,38 +49,45 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
   }, [dispatch, username, password]);
 
   return (
-    <div className={classNames(cls.LoginForm, {}, [className])}>
-      <Text title={t('Форма авторизации')} />
-      {error && (
-        <Text
-          text={t('Вы ввели неправильный логин или парроль')}
-          theme={TextTheme.ERROR}
+    <DynamicModuleLoader
+      removeAfterUnmount
+      // eslint-disable-next-line i18next/no-literal-string
+      name='loginForm'
+      reducer={loginReducer}
+    >
+      <div className={classNames(cls.LoginForm, {}, [className])}>
+        <Text title={t('Форма авторизации')} />
+        {error && (
+          <Text
+            text={t('Вы ввели неправильный логин или парроль')}
+            theme={TextTheme.ERROR}
+          />
+        )}
+        <Input
+          autoFocus
+          placeholder={t('Введите логин')}
+          className={cls.input}
+          type='text'
+          onChange={onChangeUsername}
+          value={username}
         />
-      )}
-      <Input
-        autoFocus
-        placeholder={t('Введите логин')}
-        className={cls.input}
-        type='text'
-        onChange={onChangeUsername}
-        value={username}
-      />
-      <Input
-        placeholder={t('Введите пароль')}
-        className={cls.input}
-        type='text'
-        onChange={onChangePassword}
-        value={password}
-      />
-      <Button
-        onClick={onLoginClick}
-        theme={ButtonTheme.OUTLINE}
-        className={cls.loginBtn}
-        disabled={isLoading}
-      >
-        {t('Войти')}
-      </Button>
-    </div>
+        <Input
+          placeholder={t('Введите пароль')}
+          className={cls.input}
+          type='text'
+          onChange={onChangePassword}
+          value={password}
+        />
+        <Button
+          onClick={onLoginClick}
+          theme={ButtonTheme.OUTLINE}
+          className={cls.loginBtn}
+          disabled={isLoading}
+        >
+          {t('Войти')}
+        </Button>
+      </div>
+    </DynamicModuleLoader>
   );
 });
 

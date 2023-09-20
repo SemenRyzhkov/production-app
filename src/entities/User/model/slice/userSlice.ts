@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { USER_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
-import { LOCAL_STORAGE_THEME_KEY } from 'app/providers/ThemeProvider/lib/ThemeContext';
 
 import { UserSchema, User } from '../types/user';
 
@@ -21,7 +20,7 @@ export const userSlice = createSlice({
     },
     logout: (state) => {
       state.authData = undefined;
-      localStorage.removeItem(LOCAL_STORAGE_THEME_KEY);
+      localStorage.removeItem(USER_LOCALSTORAGE_KEY);
     },
   },
 });
