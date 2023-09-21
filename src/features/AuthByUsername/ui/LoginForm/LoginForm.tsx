@@ -4,7 +4,10 @@ import { useTranslation } from 'react-i18next';
 import { Input } from 'shared/ui/Input/Input';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 
-import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+  DynamicModuleLoader,
+  ReducerList,
+} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useDispatch, useSelector, useStore } from 'react-redux';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { ReduxStoreWithManager } from 'app/providers/StoreProvider';
@@ -19,6 +22,10 @@ import { loginByUsername } from '../../model/services/loginByUsername/loginByUse
 export interface LoginFormProps {
   className?: string;
 }
+
+const initialReducers: ReducerList = {
+  loginForm: loginReducer,
+};
 
 const LoginForm = memo(({ className }: LoginFormProps) => {
   const { t } = useTranslation();
@@ -51,9 +58,7 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
   return (
     <DynamicModuleLoader
       removeAfterUnmount
-      // eslint-disable-next-line i18next/no-literal-string
-      name='loginForm'
-      reducer={loginReducer}
+      reducers={initialReducers}
     >
       <div className={classNames(cls.LoginForm, {}, [className])}>
         <Text title={t('Форма авторизации')} />
