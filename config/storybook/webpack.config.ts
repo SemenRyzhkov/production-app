@@ -24,9 +24,10 @@ export default ({ config }: { config: webpack.Configuration }) => {
     test: /\.svg$/i,
     use: ['@svgr/webpack'],
   });
-  config.plugins?.push( 
+  config.plugins?.push(
     new DefinePlugin({
       __IS_DEV__: true,
+      __API__: '',
     })
   );
   return config;

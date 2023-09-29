@@ -59,7 +59,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     if (result.meta.requestStatus === 'fulfilled') {
       onSuccess();
     }
-  }, [onSuccess, dispatch, username, password]);
+  }, [onSuccess, dispatch, password, username]);
 
   return (
     <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
