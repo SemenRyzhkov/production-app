@@ -1,6 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
 import {
   DynamicModuleLoader,
   ReducersList,
