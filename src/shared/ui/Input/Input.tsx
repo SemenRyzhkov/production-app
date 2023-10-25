@@ -16,7 +16,7 @@ type HTMLInputProps = Omit<
 
 interface InputProps extends HTMLInputProps {
   className?: string;
-  value?: string;
+  value?: string | number;
   autoFocus?: boolean;
   onChange?: (value: string) => void;
   readonly?: boolean;

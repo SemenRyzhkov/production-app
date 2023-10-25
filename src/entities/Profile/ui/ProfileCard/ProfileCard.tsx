@@ -13,9 +13,15 @@ interface ProfileCardProps {
   data?: Profile;
   error?: string;
   isLoading?: boolean;
-  readonly?:boolean;
+  readonly?: boolean;
   onChangeFirstName: (value?: string) => void;
   onChangeLastName: (value?: string) => void;
+  onChangeCity?: (value?: string) => void;
+  onChangeAge?: (value?: string) => void;
+  onChangeUsername?: (value?: string) => void;
+  onChangeAvatar?: (value?: string) => void;
+  // onChangeCurrency?: (currency: Currency) => void;
+  // onChangeCountry?: (country: Country) => void;
 }
 
 export const ProfileCard = (props: ProfileCardProps) => {
@@ -27,6 +33,12 @@ export const ProfileCard = (props: ProfileCardProps) => {
     readonly,
     onChangeFirstName,
     onChangeLastName,
+    onChangeAge,
+    onChangeCity,
+    onChangeAvatar,
+    onChangeUsername,
+    // onChangeCountry,
+    // onChangeCurrency,
   } = props;
   const { t } = useTranslation('profile');
   if (isLoading) {
@@ -73,8 +85,47 @@ export const ProfileCard = (props: ProfileCardProps) => {
           className={cls.input}
           onChange={onChangeLastName}
           readonly={readonly}
-
         />
+        <Input
+          value={data?.age}
+          placeholder={t('Ваш возраст')}
+          className={cls.input}
+          onChange={onChangeAge}
+          readonly={readonly}
+        />
+        <Input
+          value={data?.city}
+          placeholder={t('Город')}
+          className={cls.input}
+          onChange={onChangeCity}
+          readonly={readonly}
+        />
+        <Input
+          value={data?.username}
+          placeholder={t('Введите имя пользователя')}
+          className={cls.input}
+          onChange={onChangeUsername}
+          readonly={readonly}
+        />
+        <Input
+          value={data?.avatar}
+          placeholder={t('Введите ссылку на аватар')}
+          className={cls.input}
+          onChange={onChangeAvatar}
+          readonly={readonly}
+        />
+        {/* <CurrencySelect
+          className={cls.input}
+          value={data?.currency}
+          onChange={onChangeCurrency}
+          readonly={readonly}
+        />
+        <CountrySelect
+          className={cls.input}
+          value={data?.country}
+          onChange={onChangeCountry}
+          readonly={readonly}
+        /> */}
       </div>
     </div>
   );

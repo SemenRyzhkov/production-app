@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   getProfileReadonly,
   profileActions,
-  //   updateProfileData,
+  updateProfileData,
 } from 'entities/Profile';
 import { useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -29,14 +29,12 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
   }, [dispatch]);
 
   const onCancelEdit = useCallback(() => {
-    dispatch(profileActions.setReadonly(true));
-
-    // dispatch(profileActions.cancelEdit());
+    dispatch(profileActions.cancelEdit());
   }, [dispatch]);
 
-  //   const onSave = useCallback(() => {
-  //     dispatch(updateProfileData());
-  //   }, [dispatch]);
+  const onSave = useCallback(() => {
+    dispatch(updateProfileData());
+  }, [dispatch]);
 
   return (
     <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
@@ -53,7 +51,7 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
         <>
           <Button
             className={cls.editBtn}
-            // theme={ButtonTheme.OUTLINE_RED}
+            theme={ButtonTheme.OUTLINE_RED}
             onClick={onCancelEdit}
           >
             {t('Отменить')}
@@ -61,7 +59,7 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
           <Button
             className={cls.saveBtn}
             theme={ButtonTheme.OUTLINE}
-            // onClick={onSave}
+            onClick={onSave}
           >
             {t('Сохранить')}
           </Button>
