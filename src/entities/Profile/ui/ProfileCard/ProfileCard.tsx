@@ -1,9 +1,9 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Loader } from 'shared/ui/Loader/Loader';
 import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
 
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 import cls from './ProfileCard.module.scss';
 import { Profile } from '../../model/types/profile';
@@ -66,12 +66,17 @@ export const ProfileCard = (props: ProfileCardProps) => {
     );
   }
 
-  // const mods: Mods = {
-  //   [cls.editing]: !readonly,
-  // };
+  const mods: Mods = {
+    [cls.editing]: !readonly,
+  };
   return (
-    <div className={classNames(cls.ProfileCard, {}, [className])}>
+    <div className={classNames(cls.ProfileCard, mods, [className])}>
       <div className={cls.data}>
+        {data?.avatar && (
+          <div className={cls.avatarWrapper}>
+            <Avatar src={data?.avatar} />
+          </div>
+        )}
         <Input
           value={data?.first}
           placeholder={t('Ваше имя')}
