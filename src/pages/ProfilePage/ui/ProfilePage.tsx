@@ -9,7 +9,6 @@ import {
 import {
   ProfileCard,
   fetchProfileData,
-  getProfileData,
   getProfileError,
   getProfileForm,
   getProfileIsLoading,
@@ -17,7 +16,10 @@ import {
   profileActions,
   profileReducer,
 } from 'entities/Profile';
+
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { Currency } from 'entities/Currency';
+import { Country } from 'entities/Country';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const reducers: ReducersList = {
@@ -31,7 +33,7 @@ interface ProfilePageProps {
 const ProfilePage = ({ className }: ProfilePageProps) => {
   const dispatch = useAppDispatch();
 
-  const profileData = useSelector(getProfileForm);
+  const formData = useSelector(getProfileForm);
   const isLoading = useSelector(getProfileIsLoading);
   const error = useSelector(getProfileError);
   const readonly = useSelector(getProfileReadonly);
@@ -82,26 +84,26 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     [dispatch]
   );
 
-  // const onChangeCurrency = useCallback(
-  //   (currency: Currency) => {
-  //     dispatch(profileActions.updateProfile({ currency }));
-  //   },
-  //   [dispatch]
-  // );
+  const onChangeCurrency = useCallback(
+    (currency: Currency) => {
+      dispatch(profileActions.updateProfile({ currency }));
+    },
+    [dispatch]
+  );
 
-  // const onChangeCountry = useCallback(
-  //   (country: Country) => {
-  //     dispatch(profileActions.updateProfile({ country }));
-  //   },
-  //   [dispatch]
-  // );
+  const onChangeCountry = useCallback(
+    (country: Country) => {
+      dispatch(profileActions.updateProfile({ country }));
+    },
+    [dispatch]
+  );
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <div className={classNames('', {}, [className])}>
         <ProfilePageHeader />
         <ProfileCard
-          data={profileData}
+          data={formData}
           isLoading={isLoading}
           error={error}
           readonly={readonly}
@@ -111,8 +113,8 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
           onChangeCity={onChangeCity}
           onChangeUsername={onChangeUsername}
           onChangeAvatar={onChangeAvatar}
-          // onChangeCurrency={onChangeCurrency}
-          // onChangeCountry={onChangeCountry}
+          onChangeCurrency={onChangeCurrency}
+          onChangeCountry={onChangeCountry}
         />
       </div>
     </DynamicModuleLoader>

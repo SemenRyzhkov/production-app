@@ -21,5 +21,7 @@
   "Вы ввели неправильный логин или парроль": "Wrong user or password",
   "Выйти": "Logout",
   "Страница профиля": "PROFILE PAGE",
-  "Профиль": "Profile"
+  "Профиль": "Profile",
+  "Укажите валюту": "Your currency",
+  "Укажите страну": "Your country"
 }
