@@ -6,7 +6,7 @@ import { Input } from 'shared/ui/Input/Input';
 const MainPage = () => {
   const { t } = useTranslation();
 
-  return <div>{t('Главная страница')}</div>;
+  return <div style={{ color: 'yellow' }}>{t('Главная страница')}</div>;
 };
 
 export default MainPage;
