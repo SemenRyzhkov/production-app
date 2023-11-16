@@ -16,6 +16,7 @@ const meta: Meta<typeof ArticleDetailsPage> = {
 
 export default meta;
 type Story = StoryObj<typeof ArticleDetailsPage>;
+
 const article: Article = {
   id: '1',
   title: 'Javascript news',

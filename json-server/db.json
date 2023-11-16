@@ -93,7 +93,7 @@
       "id": "2",
       "text": "some comment 2",
       "articleId": "1",
-      "userId": "1"
+      "userId": "2"
     },
     {
       "id": "3",
@@ -107,13 +107,15 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT09ZQ63_ELLO78MDZ0WE3nEJxEfnqTf6trUQ&usqp=CAU"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://www.google.com/imgres?imgurl=https%3A%2F%2Fbuffer.com%2Fcdn-cgi%2Fimage%2Fw%3D1000%2Cfit%3Dcontain%2Cq%3D90%2Cf%3Dauto%2Flibrary%2Fcontent%2Fimages%2Fsize%2Fw1200%2F2023%2F10%2Ffree-images.jpg&tbnid=cLwX5fAoeFjuKM&vet=12ahUKEwjbu42n-MeCAxX-FBAIHZWIDyAQMygAegQIARBH..i&imgrefurl=https%3A%2F%2Fbuffer.com%2Flibrary%2Ffree-images%2F&docid=U9G_8UXPMlqatM&w=1000&h=666&q=image&ved=2ahUKEwjbu42n-MeCAxX-FBAIHZWIDyAQMygAegQIARBH"
     }
   ],
   "profile": {
@@ -124,6 +126,6 @@
     "country": "Belarus",
     "city": "Moscow",
     "username": "admin213",
-    "avatar": "https://yt3.ggpht.com/ytc/AAUvwngFzM_Rf6MNwOnFcuphoj93k7VFjlIrj-kSMxbh=s900-c-k-c0x00ffffff-no-rj"
+    "avatar": "https://avatars.mds.yandex.net/get-zen_doc/3413519/pub_5ff887b2fe4e686f6ae6ba3f_5ff887d7f906b16872a69755/scale_1200"
   }
 }
