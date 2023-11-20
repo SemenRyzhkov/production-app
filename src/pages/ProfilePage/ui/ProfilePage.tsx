@@ -1,6 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
 import {
   DynamicModuleLoader,
@@ -18,6 +19,7 @@ import {
   profileReducer,
 } from 'entities/Profile';
 import { useTranslation } from 'react-i18next';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Currency } from 'entities/Currency';
@@ -51,12 +53,13 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     [ValidateProfileErrors.INCORRECT_USER_DATA]: t('Имя и фамилия обязательны'),
     [ValidateProfileErrors.INCORRECT_AGE]: t('Некорректный возраст'),
   };
+  const { id } = useParams<{ id: string }>();
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchProfileData());
+  useInitialEffect(() => {
+    if (id) {
+      dispatch(fetchProfileData(id));
     }
-  }, [dispatch]);
+  });
 
   const onChangeFirstName = useCallback(
     (value?: string) => {
