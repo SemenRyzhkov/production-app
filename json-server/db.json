@@ -19,9 +19,8 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": [
-        "IT"
-      ],
+      "userId": "1",
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -150,18 +149,6 @@
       "userId": "2",
       "text": "asdasdasd",
       "id": "MVvGQoZ"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-      "id": "HO0OKv4"
-    },
-    {
-      "articleId": "1",
-      "userId": "2",
-      "text": "sss",
-      "id": "Ni3Uogr"
     }
   ],
   "users": [
@@ -190,13 +177,13 @@
       "country": "Belarus",
       "city": "Moscow",
       "username": "admin213",
-      "avatar": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fukraina.ru%2F20221202%2F1041437109.html&psig=AOvVaw0OSekysTJ89DhalcqpIbno&ust=1700543378650000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCJiR5_Ln0YIDFQAAAAAdAAAAABAEttps://www.google.com/imgres?imgurl=https%3A%2F%2Fcdnn1.ukraina.ru%2Fimg%2F07e6%2F0c%2F02%2F1041436899_0%3A206%3A2905%3A1840_1920x0_80_0_0_c7022893b761781d76fe592010d14bd2.jpg&tbnid=oumJ1Fg-rRTfFM&vet=12ahUKEwivpazx59GCAxU2d_EDHUycAjkQMygDegQIARB1..i&imgrefurl=https%3A%2F%2Fukraina.ru%2F20221202%2F1041437109.html&docid=CiWraHzdnIpAGM&w=1920&h=1079&q=%D0%BA%D0%BE%D1%82&ved=2ahUKEwivpazx59GCAxU2d_EDHUycAjkQMygDegQIARB1"
+      "avatar": "https://avatars.mds.yandex.net/get-zen_doc/3413519/pub_5ff887b2fe4e686f6ae6ba3f_5ff887d7f906b16872a69755/scale_1200"
     },
     {
       "id": "2",
-      "first": "ulbi tv222",
+      "first": "ulbi tv",
       "lastname": "asf",
-      "age": 4652,
+      "age": 465,
       "currency": "RUB",
       "country": "Russia",
       "city": "Moscow",
